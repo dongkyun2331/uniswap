@@ -17,7 +17,7 @@ const AmountIn = () => {
       />
 
       <div className="relative" onClick={() => {}}>
-        <button className={styles.currencyButton}></button>
+        <button className={styles.currencyButton}>{"ETH"}</button>
       </div>
     </div>
   );
