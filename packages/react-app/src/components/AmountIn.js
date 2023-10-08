@@ -15,6 +15,10 @@ const AmountIn = () => {
         onChange={() => {}}
         className={styles.amountInput}
       />
+
+      <div className="relative" onClick={() => {}}>
+        <button className={styles.currencyButton}></button>
+      </div>
     </div>
   );
 };
