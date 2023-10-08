@@ -17,7 +17,16 @@ const AmountIn = () => {
       />
 
       <div className="relative" onClick={() => {}}>
-        <button className={styles.currencyButton}>{"ETH"}</button>
+        <button className={styles.currencyButton}>
+          {"ETH"}
+          <img
+            src={chevronDown}
+            alt="chevron down"
+            className={`w-4 h-4 object-contain ml-2 ${
+              false ? `rotate-180` : `rotate-0`
+            }`}
+          />
+        </button>
       </div>
     </div>
   );
