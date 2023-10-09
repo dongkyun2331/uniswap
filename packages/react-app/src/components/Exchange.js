@@ -18,12 +18,18 @@ import {
   isOperationPending,
   getFailureMessage,
   getSuccessMessage,
-} from "../";
+} from "../utils";
 import { ROUTER_ADDRESS } from "../config";
 import { AmountIn, AmountOut, Balance } from "./";
 import styles from "../styles";
 
-const Exchange = (pools) => {
+const Exchange = ({ pools }) => {
+  const isApproving = isOperationPending("approve");
+  const isSwapping = isOperationPending("swap");
+
+  // const successMessage = getSuccessMessage();
+  // const failureMessage = getFailureMessage();
+
   return (
     <div className="flex flex-col w-full items-center">
       <div className="mb-8">
@@ -34,6 +40,11 @@ const Exchange = (pools) => {
         <AmountOut />
         <Balance />
       </div>
+      {"approvedNeeded" && !isSwapping} (
+      <button className={`${styles.actionButton}`}>
+        {isApproving ? "Approving..." : "Approve"}
+      </button>
+      )
     </div>
   );
 };
