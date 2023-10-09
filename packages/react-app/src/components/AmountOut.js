@@ -13,8 +13,7 @@ const AmountOut = () => {
         placeholder="0.0"
         type="number"
         value=""
-        disabled={false}
-        onChange={() => {}}
+        disabled
         className={styles.amountInput}
       />
 
