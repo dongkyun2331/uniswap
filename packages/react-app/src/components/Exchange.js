@@ -41,7 +41,14 @@ const Exchange = ({ pools }) => {
         <Balance />
       </div>
       {"approvedNeeded" && !isSwapping} (
-      <button className={`${styles.actionButton}`}>
+      <button
+        disabled={!"canApprove"}
+        className={
+          "canApprove"
+            ? "bg-site-pink text-white"
+            : "bg-site-dim text-site-dim2"`${styles.actionButton}`
+        }
+      >
         {isApproving ? "Approving..." : "Approve"}
       </button>
       )
