@@ -44,11 +44,12 @@ const Exchange = ({ pools }) => {
         <button
           disabled={!"canApprove"}
           onClick={() => {}}
-          className={
+          className={`${
             "canApprove"
               ? "bg-site-pink text-white"
-              : "bg-site-dim text-site-dim2"`${styles.actionButton}`
+              : "bg-site-dim text-site-dim2"
           }
+            ${styles.actionButton}`}
         >
           {isApproving ? "Approving..." : "Approve"}
         </button>
