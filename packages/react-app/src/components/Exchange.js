@@ -40,18 +40,43 @@ const Exchange = ({ pools }) => {
         <AmountOut />
         <Balance />
       </div>
-      {"approvedNeeded" && !isSwapping} (
-      <button
-        disabled={!"canApprove"}
-        className={
-          "canApprove"
-            ? "bg-site-pink text-white"
-            : "bg-site-dim text-site-dim2"`${styles.actionButton}`
-        }
-      >
-        {isApproving ? "Approving..." : "Approve"}
-      </button>
-      )
+      {"approvedNeeded" && !isSwapping ? (
+        <button
+          disabled={!"canApprove"}
+          onClick={() => {}}
+          className={
+            "canApprove"
+              ? "bg-site-pink text-white"
+              : "bg-site-dim text-site-dim2"`${styles.actionButton}`
+          }
+        >
+          {isApproving ? "Approving..." : "Approve"}
+        </button>
+      ) : (
+        <button
+          disabled={!"canSwap"}
+          onClick={() => {}}
+          className={
+            "canSwap"
+              ? "bg-site-pink text-white"
+              : "bg-site-dim text-site-dim2"`${styles.actionButton}`
+          }
+        >
+          {isSwapping
+            ? "Swapping..."
+            : "hasEnoughBalance"
+            ? "Swap"
+            : "Insufficient balance"}
+        </button>
+      )}
+
+      {"failuerMessage" && !"resetState" ? (
+        <p className={styles.message}>{"failuerMessage"}</p>
+      ) : "successMessage" ? (
+        <p className={styles.message}>{"successMessage"}</p>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
