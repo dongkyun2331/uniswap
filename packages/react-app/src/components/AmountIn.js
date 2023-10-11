@@ -23,7 +23,7 @@ const AmountIn = (
       <input
         placeholder="0.0"
         type="number"
-        value=""
+        value={value}
         disabled={false}
         onChange={() => {}}
         className={styles.amountInput}
