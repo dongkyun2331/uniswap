@@ -47,15 +47,12 @@ const AmountIn = (
         </button>
 
         {showList && (
-          <ul className={styles.currencyList}>
-            {[
-              { token: "ETH", tokenName: "ETH" },
-              { token: "PORI Token", tokenName: "PORI" },
-            ].map(({ token, tokenName }, index) => (
+          <ul ref={ref} className={styles.currencyList}>
+            {Object.entries(currencies).map(([token, tokenName], index) => (
               <li
                 key={index}
                 className={`${styles.currencyListItem} ${
-                  true ? "bg-site-dim2" : ""
+                  activeCurrency === tokenName ? "bg-site-dim2" : ""
                 } cursor-pointer`}
               >
                 {tokenName}
