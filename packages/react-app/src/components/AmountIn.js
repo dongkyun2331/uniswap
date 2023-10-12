@@ -24,8 +24,10 @@ const AmountIn = (
         placeholder="0.0"
         type="number"
         value={value}
-        disabled={false}
-        onChange={() => {}}
+        disabled={isSwapping}
+        onChange={(e) =>
+          typeof onChange === "function" && onChange(e.target.value)
+        }
         className={styles.amountInput}
       />
 
@@ -34,7 +36,7 @@ const AmountIn = (
         onClick={() => setShowList((prevState) => !prevState)}
       >
         <button className={styles.currencyButton}>
-          {"ETH"}
+          {activeCurrency}
           <img
             src={chevronDown}
             alt="chevron down"
