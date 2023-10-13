@@ -18,6 +18,14 @@ const AmountIn = ({
 
   useOnClickOutside(ref, () => setShowList(false));
 
+  useEffect(() => {
+    if (Object.keys(currencies).includes(currencyValue)) {
+      setActiveCurrency(currencies[currencyValue]);
+    } else {
+      setActiveCurrency("Select");
+    }
+  }, [currencies, currencyValue]);
+
   return (
     <div className={styles.amountContainer}>
       <input
