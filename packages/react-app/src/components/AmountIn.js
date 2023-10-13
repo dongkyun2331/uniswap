@@ -54,6 +54,11 @@ const AmountIn = ({
                 className={`${styles.currencyListItem} ${
                   activeCurrency === tokenName ? "bg-site-dim2" : ""
                 } cursor-pointer`}
+                onClick={() => {
+                  if (typeof onSelect === "function") onSelect(token);
+                  setActiveCurrency(tokenName);
+                  setShowList(false);
+                }}
               >
                 {tokenName}
               </li>
