@@ -4,14 +4,14 @@ import { chevronDown } from "../assets";
 import styles from "../styles";
 import { useOnClickOutside } from "../utils";
 
-const AmountIn = (
+const AmountIn = ({
   value,
   onChange,
   currencyValue,
   onSelect,
   currencies,
-  isSwapping
-) => {
+  isSwapping,
+}) => {
   const [showList, setShowList] = useState(false);
   const [activeCurrency, setActiveCurrency] = useState("Select");
   const ref = useRef();
